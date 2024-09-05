@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm border-0 modern-card">
+        <div class="card-body text-center">
+          <h2 class="mb-4 modern-title">User Dashboard</h2>
+
+          <!-- Search Input -->
+          <div class="input-container">
+            <input
+              type="text"
+              class="form-control input-box modern-input"
+              placeholder="Search user by name"
+              (input)="onSearch($event)"
+            />
+          </div>
+
+          <!-- Dropdown for Filtered Users -->
+          <div *ngIf="filteredUsers.length > 0" class="dropdown">
+            <ul class="dropdown-menu show">
+              <li
+                class="dropdown-item modern-dropdown-item"
+                *ngFor="let user of filteredUsers"
+                (click)="selectUser(user)"
+              >
+                {{ user.username }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- Selected User Display -->
+          <div
+            *ngIf="selectedUser"
+            class="selected-user mt-4 modern-selected-user"
+          >
+            <h4 class="mb-3">Selected User</h4>
+            <p><strong>ID:</strong> {{ selectedUser.id }}</p>
+            <p><strong>Name:</strong> {{ selectedUser.username }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

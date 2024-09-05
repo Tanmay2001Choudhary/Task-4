@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Task4Application<task4>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.newgen.task4.Task4Application",
+      "projectName": "task4",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
